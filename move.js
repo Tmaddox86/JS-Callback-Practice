@@ -12,7 +12,7 @@ function move(element) {
         element.style.left = left + 'px'
         element.style.bottom = bottom + 'px'
     }
-    /*function moveWithArrowKeys(left, bottom){
+    function moveWithArrowKeys(left, bottom){
         let directions = null;
         let x = 100;
         let y = 250;
@@ -61,17 +61,19 @@ function move(element) {
                 if(e.key === 'ArrowDown'){
                     direction = 'south'
                 }
+                callback()
             })
             
             document.addEventListener('keyup', function(e){
                 direction = null
+                callback()
             })
         }
         
-    }*/
+    }
     const character = newImage('assets/green-character/static.gif')
 
-    function handleDirectionChange(){
+    function handleDirectionChange(direction){
         if(direction === null){
             character.src = 'assets/green-character/static.gif'
         }
